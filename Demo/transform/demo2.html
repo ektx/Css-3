@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			height: 100vh;
+			/*transform-style: preserve-3d;*/
+			/*perspective: 1000px;*/
+		}
+		section {
+			width: 400px;
+			height: 400px;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			margin: -200px;
+			transform-origin: center;
+
+			transform-style: preserve-3d;
+			perspective: 3000px;
+
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul,li {
+			width: 100%;
+			height: 100%;
+		}
+
+		li {
+			display: none;
+			list-style: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: #f90;
+			border: 1px solid #c33;
+			transition: transform .4s ease, opacity .4s ease;
+		}
+
+		.current {
+			display: block;
+			z-index: 1000;
+		}
+		.next-1 {
+			display: block;
+			z-index: 900;
+			transform: scale(.9) translateY(-50px);
+			opacity: .8;
+		}
+		.next-2 {
+			display: block;
+			z-index: 800;
+			transform: scale(.8) translateY(-110px);
+			opacity: .5;
+		}
+		.next-3 {
+			display: block;
+			z-index: 700;
+			transform: scale(.7) translateY(-185px);
+			opacity: .2;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<ul>
+			<li class="current">1</li>
+			<li class="next-1">2</li>
+			<li class="next-2">3</li>
+			<li class="next-3">4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+			<li>13</li>
+			<li>14</li>
+			<li>15</li>
+			<li>16</li>
+			<li>17</li>
+			<li>18</li>
+			<li>19</li>
+			<li>20</li>
+		</ul>	
+	</section>
+
+	<button class="prevBtn">prev</button>
+	<button class="nextBtn">next</button>
+</body>
+<script src="jquery-3.0.0.js"></script>
+<script>
+$(function() {
+	let liSize = $('li').length;
+
+	$('li').click(function() {
+		console.log($(this).index())
+	});
+
+	$('.nextBtn').click(function() {
+
+		let _now = $('.current');
+
+		if (_now.index()+1 === liSize) {
+			console.log('END');
+			return;
+		}
+
+		_now.removeClass()
+		.next().removeClass().addClass('current')
+		.next().removeClass().addClass('next-1')
+		.next().removeClass().addClass('next-2')
+		.next().removeClass().addClass('next-3')
+	});
+
+	$('.prevBtn').click(function() {
+		let _now = $('.current');
+
+		if (_now.index() === 0) {
+			console.log('START');
+			return;
+		}
+
+		_now.removeClass().addClass('next-1')
+		.prev().addClass('current')
+		.end()
+		.next().removeClass().addClass('next-2')
+		.next().removeClass().addClass('next-3')
+		.next().removeClass()
+	});
+
+	document.onmousewheel = function(e) {
+		e = e || window.event;
+
+		if (e.wheelDelta) {
+			if (e.wheelDelta > 0) {
+				$('.nextBtn').click();
+			} else {
+				$('.prevBtn').click();
+			}
+		}
+
+		e.preventDefault()
+	}
+});
+</script>
+</html>

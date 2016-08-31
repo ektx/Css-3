@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>backdrop-filter filter2</title>
+
+	<style>
+		body, section {
+			margin: 0;
+			padding: 0;
+		}
+
+		.iphone-screen {
+			width: 390px;
+			margin: 0 auto;
+			position: relative;
+		}
+
+		.iphone-screen img {
+			width: 100%;
+			height: auto;
+		}
+
+		.control-box {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 0%;
+			background-color: rgba(255, 255, 255, .4);
+
+			-webkit-transition-property: -webkit-backdrop-filter;
+			transition-property: -webkit-backdrop-filter;
+			transition-property: backdrop-filter;
+
+			-webkit-backdrop-filter: saturate(180%) blur(20px);
+			backdrop-filter: saturate(180%) blur(20px);
+
+			-webkit-animation: heightChange 5s infinite;
+			animation: heightChange 5s infinite;
+		}
+
+		@-webkit-keyframes heightChange {
+			to {
+				height: 100%
+			}
+		}
+		@keyframes heightChange {
+			to {
+				height: 100%
+			}
+		}
+	</style>
+</head>
+<body>
+	
+	<section class="iphone-screen">
+		<img src="apps.png" alt="">
+
+		<div class="control-box">
+			
+		</div>
+	</section>
+
+	<h2>参考</h2>
+	<a href="http://www.w3cplus.com/css3/advanced-css-filters.html">高级CSS filters</a>
+	<a href="http://iamvdo.me/en/blog/advanced-css-filters">Advanced CSS filters</a>
+	<a href="http://www.johanbrook.com/writings/what-s-new-in-safari-9/">What's new in Safari 9</a>
+</body>
+</html>

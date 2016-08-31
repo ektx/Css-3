@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>内容居中</title>
+	<style type="text/css">
+	section {
+		display: -webkit-flex; /* chrome 41- */
+		display: -moz-flex;
+		display: -ms-flex;
+		display: flex; /* chrome41, */
+
+		/* 水平居中 */
+		-webkit-justify-content: center; /* webkit */
+		-moz-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;  /* firefox 18 */
+
+
+		/* 垂直居中 */
+		-webkit-align-items: center;
+		-moz-align-items: center;
+		-ms-align-items: center;
+		align-items: center; /* chrome41, */
+
+		margin: 0;
+		height: 100vh;
+	}
+	section {
+		/*内容排列方式：列*/
+		-webkit-flex-direction: column;
+		flex-direction: column;
+	}
+	a {
+		color: #fff;
+		padding: 10px;
+		display: block;
+		background-color: #f60;
+	}
+	/* 第二个提前 */
+	section > :nth-child(2) {
+		-webkit-order: -1;
+		order: -1;
+	}
+
+	#box {
+		-webkit-flex-direction: row;
+		flex-direction: row;
+	}
+	#box * {
+		-webkit-flex: 1 0 auto;
+		flex: 1 0 auto;
+	}
+	#box > :nth-child(2) {
+		opacity: .8;
+		-webkit-flex: 4 0 auto;
+		flex: 4 0 auto;
+	}
+	</style>
+</head>
+<body>
+	<section>
+		<a href="#">1</a>
+		<a href="#">2</a>
+		<a href="#">3</a>
+	</section>
+
+	<section id="box">
+		<a href="#">1</a>
+		<a href="#">2</a>
+		<a href="#">3</a>
+	</section>
+
+	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content">https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content</a>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction">https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction</a>
+</body>
+</html>

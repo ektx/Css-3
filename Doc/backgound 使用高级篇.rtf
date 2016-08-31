@@ -1,0 +1,161 @@
+{\rtf1\ansi\ansicpg936\cocoartf1343\cocoasubrtf160
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset134 STHeitiSC-Light;}
+{\colortbl;\red255\green255\blue255;}
+{\info
+{\author \'d7\'a3\'ce\'c4\'c1\'fa}}\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl320
+
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+backgound 
+\f1 \'ca\'b9\'d3\'c3\'b8\'df\'bc\'b6\'c6\'aa
+\f0 \
+Canvas
+\f1 \'ca\'b9\'d3\'c3\'d3\'eb\'d4\'aa\'cb\'d8\'b5\'c4\'ca\'b9\'d3\'c3
+\f0 \
+\
+webkit
+\f1 \'bd\'e2\'be\'f6\'b7\'bd\'b0\'b8
+\f0 \
+\
+1.webkit-canvas\
+
+\f1 \'d3\'c3\'d3\'da\'bd\'ab\'d1\'f9\'ca\'bd\'c0\'b4\'d2\'fd\'d3\'c3\'d6\'b8\'b6\'a8\'b5\'c4
+\f0 canvas
+\f1 \'d4\'aa\'cb\'d8\'d7\'f6\'b1\'b3\'be\'b0\'a1\'a3
+\f0 \
+\
+html
+\f1 \'d4\'aa\'cb\'d8
+\f0 css
+\f1 \'b8\'f1\'ca\'bd\'b4\'fa\'c2\'eb\'a3\'ba
+\f0 \
+background: -webkit-canvas(mycanvas);\
+\
+js
+\f1 \'c0\'ef\'b4\'fa\'c2\'eb\'b8\'f1\'ca\'bd\'a3\'ba
+\f0 \
+var context = document.getCSSCanvasContext("2d", "mycanvas", width, height);\
+\
+
+\f1 \'ca\'b5\'c0\'fd\'a3\'ba
+\f0 \
+\
+<html>\
+\'a0<head>\
+\'a0<style>\
+\'a0div \{ background: -webkit-canvas(squares); width:600px; height:600px; border:2px solid black \}\
+\'a0</style>\
+\'a0\
+<script type="application/x-javascript">\
+function draw(w, h) \{\
+\'a0var ctx = document.getCSSCanvasContext("2d", "squares", w, h);\
+\
+\'a0ctx.fillStyle = "rgb(200,0,0)";\
+\'a0ctx.fillRect (10, 10, 55, 50);\
+\
+\'a0ctx.fillStyle = "rgba(0, 0, 200, 0.5)";\
+\'a0ctx.fillRect (30, 30, 55, 50);\
+\}\
+\'a0 </script>\
+\'a0</head>\
+\'a0<body onload="draw(300, 300)">\
+\'a0 \'a0<div></div>\
+\'a0</body>\
+</html>\
+\
+\
+\
+moz
+\f1 \'bd\'e2\'be\'f6\'b7\'bd\'b0\'b8
+\f0 \
+1.
+\f1 \'ca\'b9\'d3\'c3
+\f0 canvas
+\f1 \'d7\'f6\'b1\'b3\'be\'b0
+\f0 \
+css
+\f1 \'b8\'f1\'ca\'bd\'a3\'ba
+\f0  \'a0background: -moz-element(canvasName);\
+\
+fn
+\f1 \'b8\'f1\'ca\'bd\'a3\'ba
+\f0  document.mozSetImageElement('cnavasName', canvasID);\
+\
+
+\f1 \'d2\'aa\'cb\'b5\'c3\'f7\'b5\'c4\'ca\'c7\'a3\'ba\'d4\'da\'d1\'f9\'ca\'bd\'d6\'d0\'a3\'ac\'ce\'d2\'c3\'c7\'d6\'b8\'b6\'a8\'d2\'aa\'ca\'b9\'d3\'c3\'b5\'c4
+\f0 cnavas
+\f1 \'c3\'fb\'b3\'c6
+\f0 ,
+\f1 \'d4\'da
+\f0 js
+\f1 \'d6\'d0\'ce\'d2\'c3\'c7\'d2\'aa\'b0\'d1
+\f0 canvas
+\f1 \'c3\'fb\'b3\'c6\'ba\'cd\'cf\'e0\'d3\'a6\'b5\'c4
+\f0 canvas
+\f1 \'b0\'f3\'b6\'a8\'c6\'f0\'c0\'b4\'a1\'a3
+\f0 \
+\
+
+\f1 \'b0\'b8\'c0\'fd\'a3\'ba
+\f0 \
+<style type="text/css">\
+\'a0 #mybox \{\
+\'a0 \'a0 background-image: -moz-element(#canvasbg);\
+\'a0 \'a0 text-align: center;\
+\'a0 \'a0 width: 400px;\
+\'a0 \'a0 height: 400px;\
+\'a0 \'a0 cursor: pointer;\
+\'a0 \}\
+</style>\
+var c = 0x00;\
+function clicked() \{\
+\'a0 var canvas = document.createElement("canvas");\
+\'a0 canvas.setAttribute("width", 100);\
+\'a0 canvas.setAttribute("height", 100);\
+\'a0\'a0\
+\'a0 var ctx = canvas.getContext('2d');\
+\'a0 ctx.fillStyle = "#" + c.toString(16) + "0000";\
+\'a0 ctx.fillRect(25, 25, 75, 75);\
+\'a0\'a0\
+\'a0 c += 0x11;\
+\'a0 if (c > 0xff) \{\
+\'a0 \'a0 c = 0x00;\
+\'a0 \}\
+\'a0\'a0\
+\'a0 document.mozSetImageElement("canvasbg", canvas);\
+\}\
+\
+\
+\
+2.
+\f1 \'bb\'f0\'ba\'fc\'b5\'c4\'bd\'e2\'be\'f6\'b7\'bd\'b0\'b8
+\f0 2
+\f1 \'cf\'e0\'b6\'d4\'c0\'b4\'cb\'b5\'d4\'f2\'b8\'fc\'bc\'d3\'b5\'c4\'bc\'f2\'b5\'a5\'d3\'eb\'cd\'ea\'c3\'c0\'a1\'a3\'cb\'fc\'bf\'c9\'d2\'d4\'d6\'b8\'b6\'a8\'c8\'ce\'ba\'ce\'b5\'c4\'d4\'aa\'cb\'d8\'c0\'b4\'d7\'f6\'ce\'aa\'b1\'b3\'be\'b0\'a3\'ac\'cd\'ac\'ca\'b1\'bb\'b9\'b1\'a3\'b3\'d6\'cb\'fc\'b5\'c4\'ca\'b1\'ca\'b1\'d0\'d4\'a1\'a3
+\f0 \
+\
+css
+\f1 \'b8\'f1\'ca\'bd\'a3\'ba
+\f0  \'a0background: -moz-element(#id);\
+\
+
+\f1 \'b0\'b8\'c0\'fd\'a3\'ba
+\f0 \
+<div style="width:400px; height:400px; background:-moz-element(#myBackground1) no-repeat;">\
+\'a0 <p>This box uses the element with the #myBackground1 ID as its background!</p>\
+</div>\
+\
+<div style="overflow:hidden; height:0;">\
+\'a0 <div id="myBackground1" style="width:1024px; height:1024px; background-image: linear-gradient(to right, red, orange, yellow, white);">\
+\'a0 <p style="transform-origin:0 0; transform: rotate(45deg); color:white;">This text is part of the background. Cool, huh?</p>\
+\'a0 </div>\
+</div>\
+\
+
+\f1 \'b2\'ce\'bf\'bc\'a3\'ba
+\f0 \
+https://www.webkit.org/blog/176/css-canvas-drawing/\
+https://www.imququ.com/post/use-canvas-as-background-image.html\
+https://developer.mozilla.org/en-US/docs/Web/API/document.mozSetImageElement\
+https://developer.mozilla.org/en-US/docs/Web/CSS/element#Syntax\
+}

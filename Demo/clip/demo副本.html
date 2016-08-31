@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Css clip</title>
+	<style>
+	.icos {
+		width: 800px;
+		height: 600px;
+		background: url(ico.gif) no-repeat;
+		position: absolute; /*clip 要与absolute或fixed一起才起作用*/
+		overflow: hidden;
+	}
+	.icos:hover {
+		clip: rect(150px 135px 240px 25px); /* IE 8-*/
+		clip: rect(150px, 135px, 240px, 25px);
+	}
+	</style>
+</head>
+<body>
+	<div class="icos"></div>
+</body>
+</html>

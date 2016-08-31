@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			height: 100vh;
+			/*transform-style: preserve-3d;*/
+			/*perspective: 1000px;*/
+		}
+		section {
+			width: 300px;
+			height: 300px;
+			position: fixed;
+			bottom: 50%;
+			left: 50%;
+			margin-left: -200px;
+			transform-origin: center;
+
+			transform-style: preserve-3d;
+			perspective: 3000px;
+
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul,li {
+			width: 100%;
+			height: 50%;
+		}
+
+		li {
+			list-style: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: #f90;
+			transform-origin: bottom;
+			border: 1px solid #c33;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>	
+	</section>
+
+	<button id="addDeg">Y 45deg</button>
+</body>
+<script>
+var lis = document.querySelectorAll('li');
+var liLen = lis.length;
+var deg = 360 / liLen;
+
+for (var i =0; i < liLen; i++) {
+	lis[i].style.transform = 'rotatex(' + i*deg + 'deg)';
+}
+
+// 移动主框架
+document.getElementById('addDeg').addEventListener('click',function(e) {
+
+	if (!this.getAttribute('add')) {
+		document.querySelector('section').style.transform = 'rotateY(45deg)';
+		this.setAttribute('add', true)
+	} else {
+		document.querySelector('section').style.transform = 'rotateY(0)';
+		this.removeAttribute('add')
+	}
+}, false);
+
+var tfObj = 0;
+var scrollFun = function (e) {
+	e = e || window.event;
+
+	if (e.wheelDelta) {
+		if (e.wheelDelta > 0) {
+
+			tfObj+=2;
+		} else {
+			tfObj-=2;
+			console.log(tfObj, 'xx')
+		}
+
+
+	} else if (e.detail) {
+		console.log('use in ff', e.detail)
+	}
+	console.log(tfObj, 'ss')
+	document.querySelector('section').style.transform = 'rotatex(' + tfObj + 'deg)';
+
+	e.preventDefault();
+}
+
+// var eleSection = document.querySelector('section');
+var eleSection = document;
+eleSection.onmousewheel = scrollFun;
+
+eleSection.onmouseenter = function(e) {
+	console.log('enter');
+
+	var tfObj = document.querySelector('section').style.transform;
+	console.log(tfObj)
+
+	if (!!tfObj) {
+		tfObj = tfObj.match(/X|x\(\d+/g)[0].substr(2)
+	} else {
+		tfObj = 0;
+	}
+
+	console.log(tfObj)
+}
+</script>
+</html>

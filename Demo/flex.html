@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>css3 flex</title>
+	<style type="text/css">
+	.flexbox {
+		display: -webkit-box;
+		display: -moz-box;
+		display: box;
+		background-color: #eee;
+		-webkit-box-orient: horizontal;
+		-moz-box-orient: horizontal;
+		box-orient: horizontal;
+	}
+	p {
+		background-color: #f90;
+	}
+
+	.flexbox > p:last-child {
+		-webkit-box-flex: 1.0;
+		-moz-box-flex: 1.0;
+		box-flex: 1.0;
+		background-color: red;
+	}
+	</style>
+</head>
+<body>
+<div class="flexbox">
+	<p>child 1</p>
+	<p>child 2</p>
+	<p>child 3</p>
+</div>
+<a href="http://www.w3school.com.cn/cssref/pr_box-flex.asp">Css3 flex</a>
+</body>
+</html>

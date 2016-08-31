@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+	<title>Link 使用媒体查询方法</title>
+	<!-- 纵向放置的显示屏 -->
+	<link rel="stylesheet" media="screen and (orientation: portrait)" href="css/portrait-screen.css">
+</head>
+<body>
+	<p>默认为纵向样式,通过以下按钮和调整窗口试试</p>
+	<button id="not">Add not</button>
+</body>
+<script>
+	document.getElementById('not').onclick = function() {
+		var txt = this.innerHTML;
+
+		if (txt.indexOf('Add') > -1) {
+
+			document.querySelector('link').setAttribute('media', 'not screen and (orientation: portrait)');
+			document.querySelector('link').href = 'css/landscape-screen.css';
+
+			this.innerHTML = 'Remove Not'
+		} else {
+			document.querySelector('link').setAttribute('media', 'screen and (orientation: portrait)');
+			document.querySelector('link').href = 'css/portrait-screen.css';
+
+			this.innerHTML = 'Add not'
+		}
+	}
+</script>
+</html>

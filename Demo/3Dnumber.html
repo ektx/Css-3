@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Clock</title>
+	<style>
+	.pages-mod {
+		position: absolute;
+		list-style: none;
+		left: 50%;
+		top: 50%;
+		z-index: 1;
+		width: 160px;
+		height: 240px;
+		margin: -120px -80px;
+	}
+	.pages-mod li {
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		text-align: center;
+		-webkit-transition: all 1s;
+		transition: all 1s;
+		-webkit-transform: translateY(-102%);
+		transform: translateY(-102%);
+		font-size: 60px;
+		line-height: 240px;
+
+	}
+	.pages-mod li:nth-child(1) {
+		background: #f90;
+		
+	}	
+	.pages-mod li:nth-child(2) {
+		background: #f60;
+	}	
+	.pages-mod li:nth-child(3) {
+		background: #90f;
+		
+	}
+	.pages-mod li.on {
+		opacity: 1;
+		-webkit-transform: translateY(0%);
+		transform: translateY(0%);
+	}
+	.pages-mod li.old {
+		-webkit-transform: translateY(102%);
+		transform: translateY(102%);
+	}	
+	</style>
+</head>
+<body>
+	<ul class="pages-mod">
+		<li class="">1</li>
+		<li class="on">2</li>
+		<li class="old">3</li>
+	</ul>
+</body>
+<script>
+	function run() {
+		var d = new Date();
+		var s =d.getSeconds();
+
+		var lis = document.querySelectorAll('.pages-mod li');
+		for (var i =0; i < lis.length; i++) {
+			if (lis[i].classList.contains('on')) {
+				lis[i].className = 'old';
+			} else if (lis[i].classList.contains('old')) {
+				lis[i].className = '';
+			} else {
+				lis[i].className = 'on';
+			}
+		}
+
+		document.querySelector('.on').innerHTML = s;
+
+		var self = this;
+
+		setTimeout(function() {
+			self.run();
+		},1000)
+	}
+	run();
+</script>
+</html>

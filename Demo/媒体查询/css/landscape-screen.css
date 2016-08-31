@@ -1,0 +1,4 @@
+body:after {
+	content: '横向样式';
+	display: block;
+}

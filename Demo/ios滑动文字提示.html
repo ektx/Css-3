@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ios 滑动文字提示效果</title>
+	<style>
+	body {
+		background: #000;
+	}
+	p {
+		width: 100px;
+		line-height: 22px;
+		color: #fff;
+		font-size: 18px;
+		text-align: center;
+		font-weight: 200;
+
+		position: fixed;
+		top: 45%;
+		left: 50%;
+		margin: 0 -50px;
+		background: #999 -webkit-gradient(linear, left top, right top, color-stop(0, #999), color-stop(0.5, #fff), color-stop(1, #999)); /* Chrome,Safari4+ */
+		background: #111 -webkit-linear-gradient(left, #000 0%, #fff 50%, #000 100%); /*Chrome10+,Safari5.1+ */
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 40% 100%;
+		background-repeat: no-repeat;
+		background-position: -100px 0;
+		-webkit-animation: shimmer 2s infinite;
+	}
+	@-webkit-keyframes shimmer {
+		0% {
+			background-position: -100% 0;
+		}
+		100% {
+			background-position: 180% 0;
+		}
+	}
+	</style>
+</head>
+<body>
+	<p>进无止境</p>
+</body>
+</html>

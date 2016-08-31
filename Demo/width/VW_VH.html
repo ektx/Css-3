@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>VMAX and VMIN</title>
+	<style>
+	body {
+		margin: 0;
+		padding: 0;
+		background-color: #f5f5f5;
+	}
+	img {
+		display: block;
+		margin: 0 auto;
+		width: 90vmin;
+		transition: width .4s ease;
+	}
+	</style>
+</head>
+<body>
+	<p>
+		<button>width: 90vw</button>
+		<button>width: 90vmax</button>
+		<button>width: 90vmin</button>
+	</p>
+	<img src="img/rabbit.jpg">
+</body>
+<script>
+	var buttons = document.querySelectorAll('button');
+	for (var i = 0; i < buttons.length; i++) {
+		// alert(buttons[i])
+		buttons[i].onclick = function() {
+			document.querySelector('img').style.width = this.innerHTML.split(' ')[1];
+		}
+	}
+</script>
+</html>

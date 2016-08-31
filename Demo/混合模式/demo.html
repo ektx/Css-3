@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Css 混合模式</title>
+	<style>
+		body {
+			background-color: #f5f5f5;
+		}
+		section {
+			width: 441px;
+			margin: 10px auto;
+			padding: 10px;
+			background-color: #f90;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<img src="龙猫.jpg" alt="龙猫">
+	</section>
+	<nav>
+		<input type="color" id="bgColor" value="#ffffff" />
+		<select name="" id="mix">
+			<option value="normal" disabled="disabled" selected="">选择你要的混合模拟..</option>
+			<option value="normal">正常</option>
+			<optgroup label="降暗混合模式">
+				<option value="darken">变暗</option>
+				<option value="multiply">正片叠底</option>
+				<option value="color-burn">颜色加深</option>
+			</optgroup>
+
+			<optgroup label="加亮">
+				<option value="screen">滤色</option>
+				<option value="lighten">变亮</option>
+				<option value="color-dodge">颜色减淡</option>
+			</optgroup>
+
+			<optgroup label="融合">
+				<option value="overlay">叠加</option>
+				<option value="soft-light">柔光</option>
+				<option value="hard-light">强光</option>
+			</optgroup>
+				
+			<optgroup label="变异">
+				<option value="difference">差值</option>
+				<option value="exclusion">排除</option>
+			</optgroup>
+				
+
+			<optgroup label="色彩叠加">
+				<option value="hue">差值</option>
+				<option value="color">颜色</option>
+				<option value="saturation">饱和度</option>
+				<option value="luminosity">明度</option>
+			</optgroup>
+				
+		</select>
+
+		<label><input id="isolation" type="checkbox">isolation</label>
+		
+	</nav>
+
+	<script>
+		var mixSel = document.getElementById('mix');
+		var frame = document.querySelector('section');
+		var colorInt = document.getElementById('bgColor');
+
+		var img = document.images[0];
+		var bgColor =  colorInt.value;
+
+		mix.addEventListener('change', function() {
+			console.log(this.value);
+
+			img.style.mixBlendMode = this.value;
+		}, false);
+
+		colorInt.addEventListener('change', function() {
+			console.log(this.value);
+
+			frame.style.backgroundColor = this.value
+		})
+
+		let isolationCkb = document.getElementById('isolation');
+		isolationCkb.addEventListener('click', function() {
+			let style = 'auto';
+			if (this.checked) {
+				style = 'isolate'
+			}
+			img.style.isolation = style;
+		})
+	</script>
+</body>
+</html>
