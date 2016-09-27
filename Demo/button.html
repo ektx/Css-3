@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Button</title>
+	<style>
+		body {
+			font-size: 14px;
+		}
+		button {
+			padding: .35em 1.07em;
+			border: 1px solid rgba(0,0,0,.1);
+			background: #58a linear-gradient(hsla(0,0%,100%, .2), transparent);
+			border-radius: .35em;
+			box-shadow: 0 .07em .35em gray;
+			color: white;
+			text-shadow: 0 -.07em .07em #335166;
+			font-size: 100%; /* 父级(这里是body)文字大小调整按钮大小 */
+			line-height: 170%;
+			outline: none;
+		}
+
+		button.cancel {
+			background-color: #c00;
+		}
+		button.ok {
+			background-color: #6b0;
+		}
+	</style>
+</head>
+<body>
+	<button>OK!</button>
+	<button class="cancel">OK!</button>
+	<button class="ok">OK!</button>
+	<br>
+	<br>
+	<button style="font-size: 60px">OK!</button>
+</body>
+</html>
