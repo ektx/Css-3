@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Button</title>
+	<style>
+		.btn, .tbtn {
+			font-size: 12px;
+			cursor: pointer;
+			outline: none;
+		}
+		.btn {
+			line-height: 1.83em;
+			color: #fff;
+			padding: 0 .83em;
+			border: 1px solid rgba(0,0,0,.2);
+		}
+		.btn:hover {
+			background-image: -ms-linear-gradient(rgba(255, 255, 255, .2), rgba(255, 255, 255, .2));
+			background-image: linear-gradient(rgba(255, 255, 255, .2), rgba(255, 255, 255, .2))
+		}
+		.btn:active {
+			background-image: -ms-linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2));
+			background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2))
+		}
+		.tbtn {
+			padding: 0;
+			margin: 0;
+			border: none;
+			background-color: transparent;
+		}
+		.tbtn:active {
+			text-decoration: underline;
+		}
+
+		.btn.green {
+			background-color: green;
+		}
+		.btn.red {
+			background-color: red
+		}
+
+		.tbtn.red {
+			color: red
+		}
+	</style>
+</head>
+<body>
+	<h1>Button</h1>
+	<section>
+		<button class="btn green">确认</button>
+		<button class="btn red">取消</button>
+		<button class="tbtn red">文字按钮</button>
+	</section>
+</body>
+</html>

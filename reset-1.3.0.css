@@ -56,7 +56,7 @@ img {
 }
 
 body {
-	font: 12px "Hiragino Sans GB","Helvetica Neue",sans-serif,"Microsoft Yahei","SimHei",Arial; /* 1 */
+	font: 12px "Microsoft Yahei","Hiragino Sans GB","Helvetica Neue",sans-serif,"SimHei",Arial; /* 1 */
 	-ms-text-size-adjust: 100%; /* 2 */
 	-webkit-text-size-adjust: 100%; /* 2 */
 	-webkit-font-smoothing: antialiased;
