@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Scroll-snap-points-x</title>
+	<style>
+	html, body, div {
+		padding: 0;
+		margin: 0;
+		height: 100%;
+	}
+	#container {
+		width: 100vw;
+		overflow: auto;
+		white-space: nowrap;
+		-webkit-scroll-snap-points-x: repeat(100%);
+		scroll-snap-points-x: repeat(100%);
+		-webkit-scroll-snap-type: mandatory;
+		scroll-snap-type: mandatory;
+		font-size: 0;
+	}
+	#container > div {
+		width: 100vw;
+		display: inline-block;
+		line-height: 90vh;
+		text-align: center;
+		font-size: 100px;
+	}
+	#container > div:nth-child(even) {
+		background-color: #87ea87;
+	}
+	#container > div:nth-child(odd) {
+		background-color: #87ccea;
+	}
+
+	/*
+	参考：
+	https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-points-x
+	*/
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</div>
+</body>
+</html>

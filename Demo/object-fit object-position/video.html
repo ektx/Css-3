@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Video Use object fit/position</title>
+	<style>
+	video {
+		background: #eee;
+	}
+	.fill {
+		object-fit: fill;
+	}
+	.contain {
+		object-fit: contain;
+	}
+	.cover {
+		object-fit: cover;
+	}
+	.none {
+		object-fit: none;
+	}
+	.scale-down {
+		object-fit: scale-down;
+	}
+	</style>
+</head>
+<body>
+	<video width="400" height="320" controls="controls">
+		<source src="ipadPro.mp4">
+	</video>
+
+	<h3>Object-fit:</h3>
+	<div id="object-box">
+		<label><input name="object-fit" type="radio" value="0">无</label>
+		<label><input name="object-fit" type="radio" value="fill">fill</label>
+	</div>
+
+	<script>
+	document.getElementById('object-box').addEventListener('click', function(e) {
+
+		if (e.target.tagName === 'INPUT') {
+			var objFit = e.target.value;
+
+			if (objFit != '0') {
+				document.querySelector('video').className = objFit
+			} else {
+				document.querySelector('video').className = ''
+			}
+			console.log('OK' + e.target.value)
+		}
+	}, false)
+	</script>
+</body>
+</html>

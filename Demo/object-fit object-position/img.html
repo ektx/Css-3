@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Img Object-fit/position Demo</title>
+	<style>
+	.photo-box {
+
+	}
+	img {
+		width: 200px;
+		height: 180px;
+	}
+	.fill {
+		object-fit: fill;
+	}
+	.contain {
+		object-fit: contain;
+	}
+	.cover {
+		object-fit: cover;
+	}
+	.none {
+		object-fit: none;
+	}
+	.scale-down {
+		object-fit: scale-down;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="photo-box">
+		<img src="img/lan.jpg" alt="">
+		<h3>object-fit: fill</h3>
+		<img class="fill" src="img/lan.jpg" alt="">
+
+		<h3>object-fit: contain</h3>
+		<img class="contain" src="img/lan.jpg" alt="">
+		
+		<h3>object-fit: cover</h3>
+		<img class="cover" src="img/lan.jpg" alt="">
+
+		<h3>object-fit: none</h3>
+		<img class="none" src="img/lan.jpg" alt="">
+
+		<h3>object-fit: scale-down</h3>
+		<img class="scale-down" src="img/lan.jpg" alt="">
+	</div>
+</body>
+</html>
