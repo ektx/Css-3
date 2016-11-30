@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>简单的页面布局</title>
+	<style type="text/css">
+		body, section, div, header, main,
+		h1, p {
+			margin: 0;
+			padding: 0;
+		}
+		.windows-box {
+			width: 600px;
+			height: 400px;
+			resize: both;
+			border: 2px solid #000;
+			overflow: auto;
+			margin: 0 auto;
+		}
+
+		.module-box {
+			width: 100%;
+			height: 100%;
+		}
+
+		.page {
+			height: 100vh;
+			text-align: center;
+		}
+
+		.title {
+			font-size: 32px;
+			line-height: 100vh;
+		}
+	</style>
+</head>
+<body>
+
+<section class="page">
+	<h1 class="title">简单的页面布局</h1>
+</section>
+
+<section class="page">
+	<h2>左右自适应浮动法</h2>
+	<div class="windows-box">
+		<style type="text/css">
+		.lr-box {
+			position: relative;
+			z-index: 1;
+		}
+
+		.module-left {
+			background-color: #8BC34A;
+		}
+		.module-right {
+			background-color: #4CAF50
+		}
+
+		.lr-box > div {
+			height: 100%;
+		}
+		.lr-box .module-left {
+			float: left;
+			width: 100px;
+			overflow: auto;
+			resize: horizontal;
+		}
+		.lr-box .module-right {
+			overflow: auto;
+		}	
+		</style>
+		<div class="module-box lr-box">
+			<div class="module-left"></div>
+			<div class="module-right"></div>
+		</div>
+	</div>
+</section>
+
+<section class="page">
+	<h2>左右自适应定位法</h2>
+	<div class="windows-box">
+		<style type="text/css">
+		.position-box {
+			position: relative;
+			z-index: 1;
+		}
+		.position-box .module-left,
+		.position-box .module-right {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			z-index: 100;
+		}
+
+		.position-box .module-left {
+			left: 0;
+			width: 200px;
+		}
+		.position-box .module-right {
+			left: 200px;
+			right: 0;
+		}	
+		</style>
+		<div class="module-box position-box">
+			<div class="module-left"></div>
+			<div class="module-right"></div>
+		</div>
+	</div>
+</section>
+
+<section class="page">
+	<h2>上下自适应布局法</h2>
+	<p>头部内容固定不变,底部大小随窗口变化而变化</p>
+	<div class="windows-box">
+		<style type="text/css">
+		.layout-box header {
+			height: 100px;
+			background-color: #8BC34A;
+		}
+		.layout-box main {
+			height: 100%;
+			margin-top: -100px;
+			padding-top: 100px;
+			box-sizing: border-box;
+		}
+		.layout-box main > div {
+			height: 100%;
+			background-color: #4CAF50;
+		}
+		</style>
+		<div class="module-box layout-box">
+			<header></header>
+			<main>
+				<div></div>
+			</main>
+		</div>
+	</div>
+</section>
+
+<section class="page">
+	<h2>上下自适应定位法</h2>
+	<div class="windows-box">
+		<style type="text/css">
+		.position2-box {
+			position: relative;
+			z-index: 1;
+		}
+		.position2-box header,
+		.position2-box main {
+			position: absolute;
+			left: 0;
+			right: 0;
+			z-index: 100;
+		}
+		.position2-box header {
+			top: 0;
+			height: 100px;
+			background-color: #8BC34A;
+		}
+		.position2-box main {
+			top: 100px;
+			bottom: 0;
+			background-color: #4CAF50;
+		}
+
+		</style>
+		<div class="module-box position2-box">
+			<header></header>
+			<main></main>
+		</div>
+	</div>
+</section>
+</body>
+</html>
