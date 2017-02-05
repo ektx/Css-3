@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css grid</title>
+
+	<style>
+		.grid {
+			/* 使用网格布局 */
+			display: grid;
+			/* 定义网格列大小 */
+			grid-template-columns: 100px 100px 100px 100px 100px;
+			/* 定义网格行大小 */
+			grid-template-rows: 100px 100px 100px 100px;
+			/* 定义网络区域 */
+			grid-template-areas: 'nav header header header aside'
+								 'nav main main main aside'
+								 'nav main main main aside'
+								 'nav footer footer footer footer';
+			/* 列间距 */
+			grid-column-gap: 5px;
+			/* 行间距 */
+			grid-row-gap: 1em;
+		}
+		.grid > div {
+			/* 使用弹性布局 */
+			display: flex;
+			/* 让内容水平居中 */
+			justify-content: center;
+			/* 让内容垂直居中 */
+			align-items: center;
+		}
+		.header { 
+			grid-area: header;
+			background-color: #2196F3;
+		}
+		.nav { 
+			grid-area: nav;
+			background-color: yellow;
+		}
+		.aside { 
+			grid-area: aside;
+			background-color: green; 
+		}
+		.main {
+			grid-area: main; 
+			background-color: pink;
+		}
+		.footer { 
+			grid-area: footer;
+			background-color: gray; 
+		}
+	</style>
+</head>
+<body>
+	
+	<section class="grid">
+		<div class="header">header</div>
+		<div class="nav">Nav</div>
+		<div class="main">Main</div>
+		<div class="aside">Aside</div>
+		<div class="footer">Footer</div>
+	</section>
+
+	<h4>参考:</h4>
+	<a href="http://www.xingbofeng.com/css-grid-flex/">拥抱未来的CSS布局方式：flex与grid布局</a>
+</body>
+</html>
