@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		::-moz-selection {
+			background-color: #f90;
+		}
+		::selection {
+			background-color: #f90;
+		}
+		/* not work */
+		::-moz-selection:-moz-window-inactive {
+			background-color: blue;
+		}
+
+		/* not work */
+		:-moz-window-inactive::-moz-selection {
+			background-color: blue;
+		}
+
+		::selection:window-inactive {
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora cum incidunt ipsa laboriosam quia, sed, laborum eum eligendi saepe numquam facilis ullam ex fugiat debitis tenetur ab. Possimus tempore, saepe!</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora cum incidunt ipsa laboriosam quia, sed, laborum eum eligendi saepe numquam facilis ullam ex fugiat debitis tenetur ab. Possimus tempore, saepe!</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora cum incidunt ipsa laboriosam quia, sed, laborum eum eligendi saepe numquam facilis ullam ex fugiat debitis tenetur ab. Possimus tempore, saepe!</p>
+
+	<a href="https://css-tricks.com/window-inactive-styling/">Window Inactive Styling</a>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-window-inactive">:-moz-window-inactive</a>
+</body>
+</html>
