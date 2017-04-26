@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>grid fr</title>
+	<style>
+		.grid {
+			height: 300px;
+			display: grid;
+			grid-template-columns: 1fr 2fr 1fr;
+			/* 定义网格行大小 (此时你要设定上面的 height )*/
+			grid-template-rows: 1fr 4fr;
+
+			background: #FFEB3B;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<section class="grid">
+		<div class="header">header</div>
+		<div class="nav">Nav</div>
+		<div class="main">Main</div>
+		<div class="aside">Aside</div>
+		<div class="footer">Footer</div>
+	</section>
+
+</body>
+</html>
