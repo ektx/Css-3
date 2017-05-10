@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css 变量声名</title>
+
+	<style>
+		:root {
+			--foo: red;
+
+			/* 大小写敏感 以下是2个不同的属性 */
+			--main: #09f;
+			--Main: yellow;
+
+			--10vh: 10vh;
+			--80vh: 80;
+		}
+
+		header {
+			/* 对于数值可以直接使用 */
+			height: var(--10vh);
+			background: var(--Main)
+		}
+
+		main {
+			/* 对于数字要使用以下方式 */
+			height: calc(var(--80vh) * 1vh);
+			background: var(--main);
+		}
+
+		footer {
+			height: var(--10vh);
+			background: var(--foo);
+		}
+	</style>
+</head>
+<body>
+	<header></header>
+	<main></main>
+	<footer></footer>
+</body>
+</html>

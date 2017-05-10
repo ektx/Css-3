@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css 作用域</title>
+
+	<style>
+		:root {
+			--color: red;
+		}
+
+		body {
+			--color: blue;
+		}
+
+		main {
+			--color: yellow;
+		}
+
+		main {
+			height: 80vh;
+			/* 就近原则 */
+			background: var(--color) /* yellow */
+		}
+
+	</style>
+</head>
+<body>
+	<main></main>
+</body>
+</html>

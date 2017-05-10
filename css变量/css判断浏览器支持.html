@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css 浏览器支持</title>
+
+	<style>
+		:root {
+			--color: red;
+		}
+
+		@supports ( (--a: 0)) {
+			small {
+				display: none
+			}
+		}
+
+		@supports ( not (--a: 0)) {
+			small {
+				display: block;
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<small>你的浏览器不支持 css 变量</small>
+	<br>
+	<main>Css 方法判断</main>
+</body>
+</html>

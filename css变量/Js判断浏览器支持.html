@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css 浏览器支持</title>
+
+	<style>
+
+		small#warn {
+			display: none
+		}
+
+	</style>
+</head>
+<body>
+	<small id="warn">你的浏览器不支持 css 变量</small>
+	<br>
+	<main>Css 方法判断</main>
+
+	<script>
+		var isSupported = window.CSS && window.CSS.supports && window.CSS.supports('--test', 0);
+
+		if (!isSupported) {
+			document.getElementById('warn').style.display = 'block'
+		}
+	</script>
+</body>
+</html>
