@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>currentColor</title>
+
+	<style>
+		p, section, div, p {
+			margin: 0;
+			padding: 0;
+		}
+
+		.callout-box {
+			position: relative;
+		}
+
+		.callout {
+			position: absolute;
+			top: .6em;
+			padding: .4em;
+			margin: 0;
+			background: #4CAF50;
+			border-radius: 3px;
+			color: #fff;
+			border: 1px solid rgba(0, 0, 0, .3);
+			text-transform: uppercase;
+		}
+		.callout::before {
+			content: '';
+			position: absolute;
+			top: -.4em;
+			left: .5em;
+			padding: .3em;
+			background: inherit;
+			border: inherit;
+			border-right: 0;
+			border-bottom: 0;
+			transform: rotate(45deg);
+		}
+	</style>
+</head>
+<body>
+	
+	<section>
+		<input type="text">
+			
+		<div class="callout-box">
+			<div class="callout">
+				<p>hello world!</p>
+			</div>
+		</div>
+	
+	</section>
+
+</body>
+</html>
