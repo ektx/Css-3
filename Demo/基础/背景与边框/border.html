@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>box-shadow</title>
+	<style type="text/css">
+		.demo {
+			max-width: 200px;
+			height: 100px;
+			margin: 50px 20px;
+			background: yellowgreen;
+			border-radius: 5px;
+		}
+
+		.effect-1 {
+			border: 10px solid yellowgreen;
+			outline: 1px dashed #fff;
+			outline-offset: -5px;
+
+		}
+
+		.effect-2 {
+			border: 10px solid yellowgreen;
+			outline: 1px dashed #fff;
+			box-shadow: 0 0 0 5px yellowgreen;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="demo effect-1"></div>
+
+	<div class="demo effect-2"></div>
+
+</body>
+</html>

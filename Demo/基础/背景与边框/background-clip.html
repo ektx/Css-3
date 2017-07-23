@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>background-clip</title>
+	<style>
+		body {
+			background: #8BC34A;
+		}
+		.one {
+			border: 10px solid hsla(0, 0%, 100%, .5);
+			background: white;
+		}
+
+		.borderBox {
+			background-clip: border-box;
+		}
+		.paddingBox {
+			background-clip: padding-box;
+		}
+	</style>
+</head>
+<body>
+	<h1>background-clip</h1>
+	
+	<p>border-box(默认)</p>
+	<div class="one borderBox">
+		<p>Hello world!</p>
+	</div>
+
+	<p>padding-box || content-box</p>
+	<div class="one paddingBox">
+		<p>Hello world!</p>
+	</div>
+</body>
+</html>
