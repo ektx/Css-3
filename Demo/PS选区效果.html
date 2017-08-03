@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PS选区效果</title>
+	<style>
+		section {
+			width: 400px;
+			height: 200px;
+
+			padding: 1em;
+			border: 1px solid transparent;
+			background: 
+				linear-gradient(white, white) padding-box,
+				repeating-linear-gradient(
+					45deg,
+					black 0,
+					black 25%,
+					transparent 0,
+					transparent 50%
+				) 0 / .6em .6em;
+			animation: ants 12s linear infinite;
+		}
+
+		@keyframes ants {
+			to {
+				background-position: 100%
+			}
+		}
+	</style>
+</head>
+<body>
+	<section></section>
+</body>
+</html>
