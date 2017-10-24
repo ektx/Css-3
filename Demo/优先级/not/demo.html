@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Css :not 伪类</title>
+	<style>
+		div.outer p {
+			color: orange
+		}
+		div:not(.outer) p {
+			color: lime
+		}
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<p>This is in the outer div.</p>
+		<div class="inner">
+			<p>这是 inner Div.</p>
+		</div>
+	</div>
+	<div>
+		<p>这是平级 div p</p>
+	</div>
+</body>
+</html>
