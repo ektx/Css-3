@@ -1,2 +1,21 @@
 # Css 3 忽略文件
-/lantoo调查卡片
+
+#忽略常用文件
+
+
+# Mac
+*.DS_Store
+
+# windows
+Thumbs.db
+
+# 添加你自己要忽略的文件
+
+# 编辑器文件
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.project
+*.vscode
