@@ -5,10 +5,11 @@
 	<title>Document</title>
 </head>
 <body>
-	<h4>选择第2个元素</h4>
+	<h4>选择第2个元素 :nth-child(2)</h4>
 	<style>
 		.one li:nth-child(2){
 			background-color: #39f;
+			color: #fff;
 		}
 	</style>
 	<ul class="one">
@@ -19,10 +20,11 @@
 		<li>Item 5</li>
 	</ul>
 
-	<h4>选择倒数第2个元素</h4>
+	<h4>选择倒数第2个元素 :nth-last-child(2)</h4>
 	<style>
 		.two li:nth-last-child(2){
 			background-color: #39f;
+			color: #fff
 		}
 	</style>
 	<ul class="two">
@@ -34,13 +36,19 @@
 	</ul>
 
 	<h4>选择偶数元素</h4>
+	<ol>
+		<li>:nth-child(2n)</li>
+		<li>:nth-last-child(2n)</li>
+	</ol>
 	<style>
 		/*.three li:nth-child(2n){
 			background-color: #39f;
+			color: #fff;
 		}*/
 
 		.three li:nth-last-child(2n) {
 			background-color: #09f;
+			color: #fff;
 		}
 	</style>
 	<ul class="three">
@@ -52,13 +60,19 @@
 	</ul>
 
 	<h4>选择奇数元素</h4>
+	<ol>
+		<li>:nth-child(2n+1)</li>
+		<li>:nth-last-child(2n+1)</li>
+	</ol>
 	<style>
 		.four li:nth-child(2n+1){
 			background-color: #39f;
+			color: #fff;
 		}
 
 		/*.four li:nth-last-child(2n+1) {
 			background-color: #09f;
+			color: #fff;
 		}*/
 	</style>
 	<ul class="four">
@@ -70,10 +84,11 @@
 	</ul>
 
 
-	<h4>选择2之后的元素</h4>
+	<h4>选择2之后的元素 :nth-child(n+3)</h4>
 	<style>
 		.five li:nth-child(n+3){
 			background-color: #39f;
+			color: #fff;
 		}
 	</style>
 	<ul class="five">
@@ -84,10 +99,11 @@
 		<li>Item 5</li>
 	</ul>
 
-	<h4>选择3之前的元素</h4>
+	<h4>选择3之前的元素 :nth-child(-n+2)</h4>
 	<style>
 		.six li:nth-child(-n+2){
 			background-color: #39f;
+			color: #fff;
 		}
 	</style>
 	<ul class="six">
@@ -98,10 +114,11 @@
 		<li>Item 5</li>
 	</ul>
 
-	<h4>隔2行选择一组元素</h4>
+	<h4>隔2行选择一组元素 :nth-child(3n+1)</h4>
 	<style>
 		.seven li:nth-child(3n+1){
 			background-color: #39f;
+			color: #fff;
 		}
 	</style>
 	<ul class="seven">
@@ -114,10 +131,11 @@
 		<li>Item 7</li>
 	</ul>	
 
-	<h4>选除最后一组元素之外的元素</h4>
+	<h4>选除最后一组元素之外的元素 :not(:nth-last-child(1))</h4>
 	<style>
 		.eight li:not(:nth-last-child(1)){
 			background-color: #39f;
+			color: #fff;
 		}
 	</style>
 	<ul class="eight">
@@ -128,16 +146,19 @@
 		<li>Item 5</li>
 		<li>Item 6</li>
 		<li>Item 7</li>
+		<p>this is p element</p>
 	</ul>
 
-	<h4>选除最后一组li元素之外的元素</h4>
+	<h4>选除最后一组li元素之外的元素 :nth-last-of-type(n+2)</h4>
 	<style>
 		/*.nine li:not(:nth-last-child(2)){
 			background-color: #39f;
+			color: #fff;
 		}*/
 		
 		.nine li:nth-last-of-type(n+2){
 			background-color: #39f;
+			color: #fff;
 		}
 	</style>
 	<ul class="nine">
@@ -148,7 +169,7 @@
 		<li>Item 5</li>
 		<li>Item 6</li>
 		<li>Item 7</li>
-		<p>P element</p>
+		<p>this is p element</p>
 	</ul>	
 </body>
 </html>
