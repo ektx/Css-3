@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>white space</title>
+    <style>
+    div {
+        padding: .5em;
+        margin-top: 1em;
+        width: 400px;
+        background: yellowgreen;
+    }
+    </style>
+</head>
+<body>
+    <h4>white-space </h4>
+    <select id="whitespace">
+    </select>
+
+    <div class="one">     Lorem ipsum dolor sit amet consectetur adipisicing elit.       Quibusdam harum repellendus odit inventore accusamus quos aliquid iure! 
+        
+        
+        Saepe maiores unde quia nihil,     perspiciatis deleniti quaerat quasi dignissimos eligendi facilis. <br/> Atque.</div>
+    <p id="description"></p>
+    <p><code>&lt;br/&gt;</code>都有效。</p>
+
+    <script>
+        let ele = document.querySelector('.one')
+        let sel = document.querySelector('#whitespace')
+        let des = document.querySelector('#description')
+        let option = {
+            normal: '是合并空格，忽略换行；超出时换行。',
+            nowrap: '并合并空格换行；超出不换行。',
+            pre: '保留空格与换行；超出时不换行。',
+            'pre-wrap': '保留空格与换行，超出时会换行。',
+            'pre-line': '合并空格，保留换行功能；超出换行。'
+        }
+
+        des.innerHTML = option.normal
+        
+        let selOption = ''
+        for (let key in option) {
+            console.log(key)
+            selOption += `<option value="${key}">${key}</option>`
+        }
+        sel.innerHTML = selOption
+
+        sel.addEventListener('change', evt => {
+            let val = evt.target.value
+            des.innerHTML = option[val]
+            ele.style.whiteSpace = val
+        })
+
+    </script>
+</body>
+</html>
