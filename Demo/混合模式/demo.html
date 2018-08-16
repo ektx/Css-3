@@ -20,7 +20,7 @@
 		<img src="龙猫.jpg" alt="龙猫">
 	</section>
 	<nav>
-		<input type="color" id="bgColor" value="#ffffff" />
+		<input type="color" id="bgColor" value="#ff9900" />
 		<select name="" id="mix">
 			<option value="normal" disabled="disabled" selected="">选择你要的混合模拟..</option>
 			<option value="normal">正常</option>
@@ -62,33 +62,26 @@
 	</nav>
 
 	<script>
-		var mixSel = document.getElementById('mix');
-		var frame = document.querySelector('section');
-		var colorInt = document.getElementById('bgColor');
+		let mixSel = document.getElementById('mix')
+		let frame = document.querySelector('section')
+		let colorInt = document.getElementById('bgColor')
 
-		var img = document.images[0];
-		var bgColor =  colorInt.value;
+		let img = document.images[0]
+		let bgColor =  colorInt.value
 
 		mix.addEventListener('change', function() {
-			console.log(this.value);
-
-			img.style.mixBlendMode = this.value;
-		}, false);
+			img.style.mixBlendMode = this.value
+		}, false)
 
 		colorInt.addEventListener('change', function() {
-			console.log(this.value);
-
 			frame.style.backgroundColor = this.value
-		})
+		}, false)
 
-		let isolationCkb = document.getElementById('isolation');
-		isolationCkb.addEventListener('click', function() {
-			let style = 'auto';
-			if (this.checked) {
-				style = 'isolate'
-			}
-			img.style.isolation = style;
-		})
+		let isolationCkb = document.getElementById('isolation')
+
+		isolationCkb.addEventListener('change', function() {
+			img.style.isolation = this.checked ? 'isolate' : 'auto'
+		}, false)
 	</script>
 </body>
 </html>
