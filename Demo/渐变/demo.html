@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圆锥渐变</title>
+    <style>
+    .box {
+        width: 150px;
+        height: 150px;
+    }
+
+    .conic-gradient-one {
+        background: conic-gradient(deeppink, yellowgreen);
+    }
+    .hue-wheel {
+        border-radius: 100%;
+        background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+    }
+    .pie-chart {
+        border-radius: 100%;
+        background: conic-gradient(yellowgreen 40%, gold 0 70%, #f06 0);
+    }
+    </style>
+</head>
+<body>
+    <h1>conic-gradient 圆锥渐变</h1>
+
+    <div class="box conic-gradient-one"></div>
+
+    <div class="box hue-wheel"></div>
+
+    <div class="box pie-chart"></div>
+
+    <h2>参考</h2>
+    <ol>
+        <li><a href="http://leaverou.github.io/conic-gradient/">CSS conic-gradient() polyfill</a></li>
+        <li><a href="https://caniuse.com/#search=conic-gradient">CanIUse conic-gradient</a></li>
+    </ol>  
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="./conic-gradient.js"></script>
+</body>
+</html>
