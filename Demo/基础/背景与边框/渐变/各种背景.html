@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>Css 背景效果</title>
 	<style>
 		body {
 			column-width: 300px;
@@ -126,6 +126,29 @@
 			background-image: 
 				conic-gradient(red, yellow, lime, aqua, blue, fuchsia, red)
 		}
+
+		.effect-18 {
+			background: 
+				radial-gradient(circle closest-side at 41% 61%, pink 28%, #b030 30%) 50px 50px,
+				radial-gradient(circle closest-side at 63% 60%, pink 28%, #b030 30%) 50px 50px,
+				radial-gradient(circle closest-side at 60% 42%, #b03 18%, #b030 20%) 50px 50px,
+				radial-gradient(circle closest-side at 45% 42%, #b03 18%, #b030 20%) 50px 50px,
+				radial-gradient(circle closest-side at 53% 49%, #b03 18%, #b030 20%) 50px 50px,
+				
+				radial-gradient(circle closest-side at 41% 61%, pink 28%, #b030 30%),
+				radial-gradient(circle closest-side at 63% 60%, pink 28%, #b030 30%),
+				radial-gradient(circle closest-side at 60% 42%, #b03 18%, #b030 20%),
+				radial-gradient(circle closest-side at 45% 42%, #b03 18%, #b030 20%),
+				radial-gradient(circle closest-side at 53% 49%, #b03 18%, #b030 20%);
+			background-color: pink;
+			background-size: 100px 100px;
+		}
+
+		.effect-19 {
+			background: 
+				linear-gradient(transparent 0%, #000 100%),
+				linear-gradient(90deg, transparent 0%, #f00 100%);
+		}
 	</style>
 </head>
 <body>
@@ -162,6 +185,10 @@
 	<div class="demo effect-16"></div>
 	
 	<div class="demo effect-17"></div>
+
+	<div class="demo effect-18"></div>
+
+	<div class="demo effect-19"></div>
 
 </body>
 </html>
