@@ -81,7 +81,7 @@ table {
  */
 img {
 	border-style: none; /* 1 */
-	-ms-interpolation-mode:bicubic; /* 2 */
+	-ms-interpolation-mode: bicubic; /* 2 */
 }
 
 /* Change the font styles in all browsers. */
