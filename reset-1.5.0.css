@@ -3,8 +3,8 @@
 /*
 	reset.css
 	重置浏览器的常用样式
-	@author: ektx
-	@version 1.4.0
+	@author: ektx(zwl)
+	@version 1.5.0
 */
 
 /** 
@@ -126,5 +126,24 @@ template {
 	::-moz-selection {
 		color: #fff;
 		background-color: #ccc;
+	}
+
+	4.webkit 滚动条样式
+	4.1 定义滚动条整体大小
+	::-webkit-scrollbar {
+		width: 2px;
+	}
+	4.2 主样式 
+	::-webkit-scrollbar-track-piece {
+		background-color: #eee;
+	}
+	4.3 滑块
+	::-webkit-scrollbar-thumb {
+		background-color: #aaa;
+	}
+	
+	5 窗口失去焦点时滚动条样式 
+	::-webkit-scrollbar-thumb:window-inactive {
+		background: rgba(255,0,0, 1);
 	}
  */
