@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>word-wrap word-break</title>
+	<style type="text/css">
+		div {
+			width: 200px;
+			border: 2px solid #f90;
+		}
+		span {
+			outline: 2px solid green;
+		}
+	</style>
+</head>
+<body>
+	<select>
+		<option>break-word</option>
+		<option>inherit</option>
+		<option>initial</option>
+		<option>normal</option>
+		<option>unset</option>
+	</select>
+
+	<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<span>thisIsALongTextTest_thisIsALongTextTest_thisIsALongTextTest</span>
+	</div>
+
+	<a href="https://segmentfault.com/q/1010000009854364">css中，word-wrap和word-break的区别是什么</a>
+
+	<script type="text/javascript">
+		let el = document.querySelector('div')
+	</script>
+</body>
+</html>
