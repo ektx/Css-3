@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .grid-container1 {
+            display: grid;
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        .grid-container1 .item1 {
+            grid-column: 1 / span 2;
+            grid-row: 1;
+        }
+
+        .grid-container1 .item2 {
+            grid-column: 3;
+            grid-row: 1 / span 2;
+        }
+
+        .grid-container1 .item5 {
+            grid-column: 1 / span 3;
+            grid-row: 3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>A Five Items Grid Layout:</h1>
+
+    <div class="grid-container1 ">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">
+            <p>2</p>
+            <p>grid-column: 3</p>
+            <p>grid-row: 1 / span 2</p>
+        </div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+    </div>
+
+    <p>Direct child elements(s) of the grid container automatically becomes grid items.</p>
+
+    <p>Item 1, 2, and 5 are set to span multiple columns or rows.</p>
+
+    <style>
+        .grid-container2 {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .item8 {
+            grid-area: 1 / 2 / 5 / 6;
+        }
+    </style>
+
+    <h1>The grid-area Property</h1>
+
+    <p>You can use the <em>grid-area</em> property to specify where to place an item.</p>
+
+    <p>The syntax is:</p>
+    <p>grid-row-start / grid-column-start / grid-row-end / grid-column-end.</p>
+
+    <p>Item8 will start on row-line 1 and column-line 2, and end on row-line 5 column-line 6:</p>
+
+    <div class="grid-container2">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+        <div class="grid-item item10">10</div>
+        <div class="grid-item item11">11</div>
+        <div class="grid-item item12">12</div>
+        <div class="grid-item item13">13</div>
+        <div class="grid-item item14">14</div>
+        <div class="grid-item item15">15</div>
+    </div>
+
+    <style>
+        .grid-container3 .item1 {
+            grid-area: myArea;
+        }
+
+        .grid-container3 {
+            display: grid;
+            grid-template-areas: 'myArea myArea . . .''myArea myArea . . .';
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+    </style>
+
+    <h1>The grid-area Property</h1>
+
+    <p>You can use the <em>grid-area</em> property to name grid items.</p>
+
+    <p>You can refer to the name when you set up the grid layout, by using the <em>grid-template-areas</em> property on
+        the grid container.</p>
+
+    <p>Item1, is called "myArea" and will take up the place of two columns (out of five), and will span two rows:</p>
+
+    <div class="grid-container3">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+    </div>
+</body>
+
+</html>
