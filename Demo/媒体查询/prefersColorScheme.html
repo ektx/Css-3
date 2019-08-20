@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dark Mode</title>
+	<style type="text/css">
+		@media (prefers-color-scheme: dark) {
+			body {
+				background-color: black;
+				color: white;
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1>随浏览器切换显示模式</h1>
+	<a href="https://web.dev/prefers-color-scheme/">Hello darkness, my old friend</a>
+
+	<script type="text/javascript">
+	// 监听模式的变化 
+	const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+	darkModeMediaQuery.addListener((e) => {
+		const darkModeOn = e.matches;
+		console.log(`Dark mode is ${darkModeOn ? '🌒 on' : '☀️ off'}.`);
+	});
+	</script>
+</body>
+</html>
