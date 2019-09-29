@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>clip-path</title>
+	<style type="text/css">
+		.box {
+			width: 300px;
+			height: 300px;
+			background-color: greenyellow;
+			transition: clip-path 1s;
+		}
+
+		.circle {
+			clip-path: circle(75%);
+		}
+		.circle:hover {
+			clip-path: circle(25%);
+		}
+
+		.ellipse {
+			clip-path: ellipse(25% 50% at 25% 50%);
+		}
+
+		.ellipse:hover {
+			clip-path: ellipse(50% 25% at 50% 50%);
+		}
+
+		.inset {
+			clip-path: inset(0% 0% 0% 0% round 15%);
+		}
+
+		.inset:hover {
+			clip-path: inset(45% 45% 45% 45% round 5%)
+		}
+
+		.polygon {
+			clip-path: polygon(50% 25%, 75% 75%, 25% 75%);
+		}
+
+		.polygon:hover {
+			clip-path: polygon(25% 25%, 75% 25%, 45% 75%)
+		}
+
+		.circle-ani {
+			animation: circle 3s infinite;
+		}
+		@keyframes circle {
+			0% { clip-path: circle(45%); }
+			50% { clip-path: circle(5%); }
+			100% { clip-path: circle(45%); }
+		}
+	</style>
+</head>
+<body>
+	<h1>circle</h1>
+	<div class="box circle">hover</div>
+
+	<h1>ellipse</h1>
+	<div class="box ellipse">hover</div>
+
+	<h1>Inset</h1>
+	<div class="box inset">hover</div>
+
+	<h1>Polygon</h1>
+	<div class="box polygon">hover</div>
+
+	<h1>circle animations</h1>
+	<div class="box circle-ani"></div>
+
+	<a href="https://css-tricks.com/animating-with-clip-path/">Animating with Clip-Path</a>
+
+</body>
+</html>
