@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>line-clamp</title>
+  <style>
+  p {
+    height: 100px;
+    width: 100px;
+    border: 2px solid yellowgreen;
+    resize: both;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .line {
+    /* Needed to make it work */
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  </style>
+</head>
+<body>
+  <p class="line">The spec for it is currently an Editor's Draft, so that means nothing here is set in stone because it's a work in progress. That said, it's defined as a shorthand for max-lines and block-overflow, the former of which is noted as at risk of being dropped in the Candidate Recommendation.</p>
+
+  <p>
+    <span class="line-clamp">The spec for it is currently an Editor's Draft, so that means nothing here is set in stone because it's a work in progress. That said, it's defined as a shorthand for max-lines and block-overflow, the former of which is noted as at risk of being dropped in the Candidate Recommendation.
+    </span>
+  </p>
+  </div>
+</body>
+</html>
