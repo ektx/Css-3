@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>backdrop-filter filter2</title>
+	<title>backdrop-filter filter</title>
 
 	<style>
 		body, section {
@@ -23,36 +23,19 @@
 
 		.control-box {
 			position: absolute;
-			bottom: 0;
+			top: 0;
 			left: 0;
 			width: 100%;
-			height: 0%;
+			height: 50%;
 			background-color: rgba(255, 255, 255, .4);
-
-			-webkit-transition-property: -webkit-backdrop-filter;
-			transition-property: -webkit-backdrop-filter;
-			transition-property: backdrop-filter;
-
-			-webkit-backdrop-filter: saturate(180%) blur(20px);
 			backdrop-filter: saturate(180%) blur(20px);
-
-			-webkit-animation: heightChange 5s infinite;
-			animation: heightChange 5s infinite;
-		}
-
-		@-webkit-keyframes heightChange {
-			to {
-				height: 100%
-			}
-		}
-		@keyframes heightChange {
-			to {
-				height: 100%
-			}
+			resize: vertical;
+			overflow: hidden;
 		}
 	</style>
 </head>
 <body>
+	<h1>毛玻璃效果</h1>
 	
 	<section class="iphone-screen">
 		<img src="apps.png" alt="">
