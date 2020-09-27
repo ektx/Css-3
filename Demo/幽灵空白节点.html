@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>幽灵空白节点</title>
+  <style>
+    .demo {
+      background-color: #09f;
+    }
+    
+    .demo2 {
+      font-size: 0;
+      background-color: #09f;
+    }
+
+    span {
+      display: inline-block;
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo">
+    <span></span>
+  </div>
+  
+  <p>span 为空，同时宽高为0</p>
+
+  <div class="demo2">
+    <span></span>
+  </div>
+  <p>通过设置 font-size 可以消除空白幽灵节点。</p>
+</body>
+</html>
