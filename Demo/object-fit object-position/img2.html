@@ -8,6 +8,7 @@
 		width: 400px;
 		height: 300px;
 		background: yellowgreen;
+		border: 5px solid #f90;
 		transition: 1s width, 1s height;
 		object-position: 50% 50%;
 	}
@@ -69,16 +70,16 @@
 
 		if (e.target.tagName === 'INPUT') {
 			// 取值
-			var val = e.target.value;
+			let val = e.target.value;
 			// 取类型，是x或y
-			var id = e.target.name;
-			var outVal = '';
+			let id = e.target.name;
+			let outVal = '';
 
 			// 取原来的值
-			var ele = document.querySelector('img');
-			var objPosition = window.getComputedStyle(ele, null).objectPosition;
+			let ele = document.querySelector('img');
+			let objPosition = window.getComputedStyle(ele, null).objectPosition;
 
-			var position = {
+			let position = {
 				x: objPosition.split(' ')[0],
 				y: objPosition.split(' ')[1]
 			}
