@@ -4,6 +4,9 @@
 	<meta charset="UTF-8">
 	<title>PS选区效果</title>
 	<style>
+		body {
+			background-color: aqua;
+		}
 		section {
 			width: 400px;
 			height: 200px;
@@ -20,6 +23,15 @@
 					transparent 50%
 				) 0 / .6em .6em;
 			animation: ants 12s linear infinite;
+			clip-path: polygon(
+				0px 100%, 
+				100% 100%, 
+				0px 0px, 
+				100% 0px, 
+				100% 2px, 
+				2px 2px, 
+				112px 24px
+			);
 		}
 
 		@keyframes ants {
@@ -30,6 +42,8 @@
 	</style>
 </head>
 <body>
-	<section></section>
+	<section>
+		<p>hello world</p>
+	</section>
 </body>
 </html>
