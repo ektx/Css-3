@@ -2,27 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>css 浏览器支持</title>
-
-	<style>
-
-		small#warn {
-			display: none
-		}
-
-	</style>
+	<title>Css 方法判断</title>
 </head>
 <body>
-	<small id="warn">你的浏览器不支持 css 变量</small>
+	<h1>Css 方法判断</h1>
+	当前浏览器是否支持 CSS 变量:
+	<small id="warn"></small>
 	<br>
-	<main>Css 方法判断</main>
 
 	<script>
-		var isSupported = window.CSS && window.CSS.supports && window.CSS.supports('--test', 0);
-
-		if (!isSupported) {
-			document.getElementById('warn').style.display = 'block'
-		}
+		let isSupported = window.CSS && window.CSS.supports && window.CSS.supports('--test', 0);
+	
+		warn.innerText = isSupported
 	</script>
 </body>
 </html>
