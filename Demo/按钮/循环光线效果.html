@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>循环光线边框</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      padding: 100px;
+      background-color: #000;
+    }
+
+    button {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      border: none;
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, .2);
+      transition: box-shadow .3s ease-in-out;
+      -webkit-box-reflect: below 2px linear-gradient(transparent, transparent, #0004);
+    }
+
+    button::before {
+      content: '';
+      position: absolute;
+      width: 400%;
+      height: 60%;
+      background-color: var(--light);
+      animation: run 2s infinite linear;
+      transition: height .3s ease-in-out;
+    }
+
+    button::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
+      inset: 2px;
+      background-color: #000;
+      transition: background-color .3s ease-in-out;
+    }
+
+    span {
+      position: relative;
+      z-index: 99;
+      font-size: 2em;
+      color: #fff;
+    }
+
+    button:hover {
+      box-shadow: 0 0 20px 5px var(--light);
+    }
+
+    button:hover::after {
+      background-color: var(--light);
+    }
+
+    button:hover::before {
+      height: 400%;
+      animation-play-state: paused;
+    }
+
+    button:hover span {
+      color: #000;
+    }
+
+    @keyframes run {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    div {
+      display: inline-block;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <button style="--light: #f00">
+      <span>Hello CSS!</span>
+    </button>
+  </div>
+  <div>
+    <button style="--light: #ff0">
+      <span>Hello World!</span>
+    </button>
+  </div>
+  <div style="display: block; height: 100px;">
+  
+    
+  </div>
+  <div>
+    <button style="--light: #0ff">
+      <span>你好，世界!</span>
+    </button>
+  </div>
+  <div>
+    <button style="--light: #027AFF">
+      <span>你好，CSS!</span>
+    </button>
+  </div>
+  
+</body>
+</html>
