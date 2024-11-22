@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            background: #000;
+        }
+
+        @property --a { /* must register --a to animate it */
+	syntax: '<angle>';
+	initial-value: 0deg;
+	/* used only on pseudo, nowhere to be inherited, 
+	 * better perf if set false, see 
+	 * https://www.bram.us/2024/10/03/benchmarking-the-performance-of-css-property/ */
+	inherits: false
+}
+
+.card {
+	overflow: hidden;
+	width: Min(12.5em, 80vmin);
+    height: 30px;
+	border-radius: .5em;
+	
+	/* text & layout styles below just for prettifying */
+	/* place-self: center; */
+	/* place-content: center; */
+	padding: .5em;
+	color: #ededed;
+	font: clamp(1em, 2vw + 2vh, 2em) sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	text-wrap: balance;
+    inset: -1em;
+	/* reserve space for border */
+	border: solid 2px;
+	border-image: 
+		conic-gradient(from var(--a), #669900, #99cc33, #ccee66, 
+				#006699, #3399cc, #990066, #cc3399, 
+				#ff6600, #ff9900, #ffcc00, #669900) 1;
+	/* background: conic-gradient(
+        from var(--a),
+         #669900, #99cc33, #ccee66, 
+				#006699, #3399cc, #990066, #cc3399, 
+				#ff6600, #ff9900, #ffcc00, #669900); */
+	/* blur this pseudo */
+	/* filter: blur(.75em); */
+	/* tweak animation duration as necessary */
+	animation: a 4s linear infinite;
+}
+
+/* animate --a from its initial-value 0deg to 1turn */
+@keyframes a { to { --a: 1turn } }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="card"></div>
+</body>
+</html>
