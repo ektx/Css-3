@@ -30,9 +30,21 @@
         padding: 0.5em;
         color: #ededed;
         border: solid 2px;
-        /* background: yellowgreen; */
-        mask-image: conic-gradient(from var(--a, 0deg), transparent 0%, transparent 10%, red 36%, red 45%, red 50%, transparent 60%, yellow 85%, yellow 95%, transparent 100%);
-        /* background: conic-gradient(from var(--a, 0deg), transparent 0%, transparent 10%, red 36%, red 45%, red 50%, transparent 60%, yellow 85%, yellow 95%, transparent 100%); */
+        border-image: conic-gradient(
+            from var(--a),
+            #669900,
+            #99cc33,
+            #ccee66,
+            #006699,
+            #3399cc,
+            #990066,
+            #cc3399,
+            #ff6600,
+            #ff9900,
+            #ffcc00,
+            #669900
+          )
+          1;
         /* background: conic-gradient(
         from var(--a),
          #669900, #99cc33, #ccee66, 
