@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100vh;
+            align-content: center;
+            background-color: #000;
+        }
+
+        .box {
+            margin: 10px auto;
+            width: 200px;
+            height: 200px;
+            background: yellowgreen;
+            clip-path: polygon(
+                0% 0%, 10% 0%, 10% 5%, 5% 5%, 5% 10%, 0% 10%, 
+                0% 0%, 90% 0%, 90% 5%, 95% 5%, 95% 10%, 100% 10%, 100% 0%, 
+                100% 90%, 95% 90%, 95% 95%, 90% 95%, 90% 100%, 100% 100%,
+                100% 90%, 100% 0%, 0% 0%, 0% 100%, 10% 100%,
+                 10% 95%, 5% 95%, 5% 90%, 0% 90%, 0% 100%
+            );
+        }
+
+        .num {
+            --h: 1px;
+            --w: 30px;
+            width: 500px;
+            height: 500px;
+            clip-path: polygon(
+                0% 0%, var(--w) 0%, var(--w) var(--h), var(--h) var(--h), var(--h) var(--w), 0% var(--w), 
+                0% 0%, calc(100% - var(--w)) 0%, calc(100% - var(--w)) var(--h), calc(100% - var(--h)) var(--h), calc(100% - var(--h)) var(--w), 100% var(--w), 
+                100% calc(100% - var(--w)), calc(100% - var(--h)) calc(100% - var(--w)), calc(100% - var(--h)) calc(100% - var(--h)), calc(100% - var(--w)) calc(100% - var(--h)), calc(100% - var(--w)) 100%, 100% 100%,
+                100% calc(100% - var(--w)), 100% 0%, 0% 0%, 0% 100%, 
+                var(--w) 100%, var(--w) calc(100% - var(--h)), var(--h) calc(100% - var(--h)), var(--h) calc(100% - var(--w)), 0% calc(100% - var(--w)), 0% 100%
+            );
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box num"></div>
+</body>
+</html>
