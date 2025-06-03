@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter-reset</title>
+     <style>
+        .counter {
+            /* --counter-name: my-counter; */
+            /* counter-reset: var(--counter-name, 0); */
+            counter-increment: var(--counter-name);
+
+            &::before{
+                content: "第" counter(var(--counter-name)) "个";
+                padding: 0 10px 0 0;
+                user-select: all;
+            }
+        }
+        
+     </style>
+</head>
+<body>
+    <h1>自定义计数器</h1>
+
+    <h2>第一个列表</h2>
+
+    <div class="counter" style="--counter-name: o1">this is 2</div>
+    <div class="counter" style="--counter-name: o1">this is 1</div>
+    <div class="counter" style="--counter-name: o1">this is 3</div>
+    <div class="counter" style="--counter-name: o1">this is 4</div>
+    
+    
+    <h2>第二个列表</h2>
+    <div class="counter" style="--counter-name: o2">this is 1</div>
+    <div class="counter" style="--counter-name: o2">this is 2</div>
+    <div class="counter" style="--counter-name: o2">this is 3</div>
+    <div class="counter" style="--counter-name: o2">this is 4</div>
+</body>
+</html>
