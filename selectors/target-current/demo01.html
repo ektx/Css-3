@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            position: fixed;
+            scroll-target-group: auto;
+        }
+
+        a:target-current {
+            color: red;
+        }
+
+        section {
+            height: 100vh;
+            background: #eee;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>使用自定义的tab来控制跳转</h1>
+    
+    <ul>
+        <li><a href="#intro">前言</a></li>
+        <li><a href="#ch1">第1章</a></li>
+        <li><a href="#ch2">第2章</a></li>
+    </ul>
+
+    <article>
+        <section id="intro">前言</section>
+        <section id="ch1">第1章</section>
+        <section id="ch2">第2章</section>
+    </article>
+</body>
+</html>
