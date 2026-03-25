@@ -14,3 +14,5 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:target-cur
 ## 缺点
 - 点击时，页面会进行滚动。
 - 跳转会改变页面的 URL，也会记录到历史记录中。
+
+https://chrome.dev/css-wrapped-2025/#scroll-target-group
