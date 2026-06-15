@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            height: 100vh;
+            background: #eee;
+            border-radius: 5px;
+        }
+
+        article {
+            height: 100dvh;
+            overflow: auto;
+            scroll-marker-group: before;
+
+            &::scroll-marker-group {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                background: #fff;
+                border: 1px solid #000;
+            }
+
+        }
+        
+        section::scroll-marker {
+            display: block;
+            content: attr(data-tab-label);
+
+        }
+        section::scroll-marker:target-current {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <section data-tab-label="第1章" id="ch1">第1章</section>
+        <section data-tab-label="第2章" id="ch2">第2章</section>
+        <section data-tab-label="第3章" id="ch3">第2章</section>
+    </article>
+</body>
+</html>
