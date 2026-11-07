@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background-clip</title>
+    <style>
+    html, body {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        background: #000;
+        place-items: center;
+        place-content: center;
+    } 
+
+    @property --map-angle {
+        syntax: '<angle>';
+        initial-value: 0deg;
+        inherits: false;
+    }
+
+    .box {
+        position: relative;
+        display: inline-flex;
+        height: 300px;
+        aspect-ratio: 1;
+        border-radius: 30%;
+        color: #fff;
+
+        .bg {
+            position: absolute;
+            inset: 0;
+            background: conic-gradient(
+                from var(--map-angle),
+                transparent 34%,#9378ff 37%,
+                #f96bd6 39%,#fc413d 41%,
+                #fc413d 48%,#ff6b2b 50%,
+                #fec700 52%,#ffdb0f 56%,
+                #88de42 58%,#0ebc5f 61%,
+                #0ebc5f 65%,#2eaab2 70%,
+                #00a9bb 72%,transparent 73%,
+                transparent 83%,transparent 100%
+            );
+            background-clip: border-area;
+            background-origin: border-box;
+            border: 10px solid transparent;
+            border-radius: inherit;
+
+            animation: animate 2s linear infinite;
+            filter: blur(5px);
+        }
+    
+
+        .content {
+            position: absolute;
+            inset: 0;
+            background: #000;
+            border-radius: inherit;
+            padding: 20px 50px;
+            font-size: 20px;
+        }
+    }
+
+    @keyframes animate {
+       to {
+           --map-angle: 1turn;
+       }
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="bg"></div>
+        <div class="content">click</div>
+    </div>
+</body>
+</html>
